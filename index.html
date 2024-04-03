@@ -35,27 +35,35 @@
                                 <p>attiva notifivhe di desktop</p>
                             </div>
                         </div>
-                        <div class="p-2 find-chat"> <input type="text" class=" w-100 " placeholder="Cerca o inizia una nuova chat"></div>
+                        <div class="p-2 find-chat"> <input type="text" class=" w-100 "
+                                placeholder="Cerca o inizia una nuova chat"></div>
                         <!-- contacts -->
-                       
-                            <div class="contacts">
-                                <div class="contact d-flex align-content-start p-3" v-for="(contact, index) in contacts"
-                                    :class="{}">
-                                    <div><img src="img/avatar_2.jpg" alt="" class="img-contact rounded-circle"></div>
-                                    <div>
-                                        <h6>Michele</h6><span>ultimo messaggio</span>
-                                    </div>
-                                    <div class="time ms-auto ">90</div>
+
+                        <div class="contacts">
+                            <div class="contact d-flex align-content-start p-3" v-for="(contact, index) in contacts"
+                                :class="{}">
+                                <div><img src="img/avatar_2.jpg" alt="" class="img-contact rounded-circle"></div>
+                                <div>
+                                    <h6>Michele</h6><span>ultimo messaggio</span>
                                 </div>
+                                <div class="time ms-auto ">90</div>
                             </div>
-                        
+                        </div>
+
                     </div>
                 </div>
                 <!-- chat -->
 
                 <div class="col-8 bg-body-secondary d-flex flex-column ">
                     <div class="little-header w-100 ">header</div>
-                    <div class="little-main bg-body-tertiary w-100  chat ">caio</div>
+                    <div class="little-main bg-body-tertiary w-100 d-flex flex-column justify-content-between">
+                        <div class="chat w-100 h-100"></div>
+                        <div class="text-input p-2 d-flex justify-content-between align-items-center">
+                            <i class="fa-regular fa-face-smile ps-4 text-center"></i>
+                            <input type="text" class="w-75">
+                            <i class="fa-solid fa-microphone pe-4 text-center"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
 

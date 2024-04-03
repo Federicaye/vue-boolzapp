@@ -62,7 +62,7 @@ ul {
 }
 
 .find-chat {
-    height: 30px;
+    height: 40px;
 }
 .chat {
     overflow-y: auto;
@@ -71,7 +71,24 @@ ul {
 .contacts {
     overflow-y: auto;
     width: 100%;
-    height: calc(100% - 100px);
-    max-height: calc(100% - 100px);
+    height: calc(100% - 110px);
 
 }
+
+/* LITTLE MAIN chat */
+
+.col-8 input {
+    height: 40px;
+}
+
+.col-8 .p-2 {
+font-size: 20px;
+color: rgb(94, 94, 94);
+}
+
+.text-input {
+    background-color: var(--grey-light);
+}
+.chat {
+background-image: url(img/mine.jpg);
+} 
