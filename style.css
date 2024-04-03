@@ -14,10 +14,6 @@
 
 }
 
-ul {
-    padding-inline-start: 0px;
-}
-
 .wrapper {
     height: calc(100vh - 60px);
     width: 100%;
@@ -30,6 +26,23 @@ ul {
     height: 50px;
     background-color: var(--grey);
 }
+
+.img-user {
+    width: 40px;
+}
+
+.col-8 .little-header p {
+    line-height: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.little-header i {
+    color: rgb(94, 94, 94);
+}
+
+/* LITTLE HEADER */
 
 /* LITTLE MAIN contacts list */
 
@@ -64,9 +77,6 @@ ul {
 .find-chat {
     height: 40px;
 }
-.chat {
-    overflow-y: auto;
-}
 
 .contacts {
     overflow-y: auto;
@@ -82,13 +92,15 @@ ul {
 }
 
 .col-8 .p-2 {
-font-size: 20px;
-color: rgb(94, 94, 94);
+    font-size: 20px;
+    color: rgb(94, 94, 94);
 }
 
 .text-input {
     background-color: var(--grey-light);
 }
+
 .chat {
-background-image: url(img/mine.jpg);
-} 
+    background-image: url(img/mine.jpg);
+    overflow-y: auto;
+}
