@@ -53,6 +53,13 @@ createApp({
             };
             messages.push(answerMessage);
             return answerMsg;
+        },
+
+        searchNameContact(name1, name2) {
+            return name2.forEach((el, i) => {
+                name1.includes(this.name2[i])
+            });
+
         }
 
     },
@@ -62,14 +69,18 @@ createApp({
         },
         filteredContacts() {
             return this.contacts.filter((el) => {
-                searchName.forEach((el, i) => {
-                    el.name.includes(this.searchName[i])
-                });
+                if (searchName = " ") {
+                    return true
+                } else if (searchName != " ") {
+                    searchName.forEach((el, i) => {
+                        el.name.includes(this.searchName[i])
+                    });
+                }
             })
         }
 
     },
     mounted() {
-
+searchNameContact("fede", "fra");
     }
 }).mount('#app')
