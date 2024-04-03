@@ -8,7 +8,8 @@ createApp({
             activeContact: 1,
             contacts,
             dateLastMsg: null,
-            newMessage: ""
+            newMessage: "",
+            searchName: ""
         }
     },
     methods: {
@@ -40,6 +41,7 @@ createApp({
             console.log(enterMessage.message);
             console.log(enterMessage);
             setTimeout(() => { this.answerMsg(messages); }, 3000);
+            this.newMessage = "";
             return enterMessage;
         },
 
@@ -57,6 +59,13 @@ createApp({
     computed: {
         activeContactChat() {
             return this.contacts.find((el) => el.id === this.activeContact)
+        },
+        filteredContacts() {
+            return this.contacts.filter((el) => {
+                searchName.forEach((el, i) => {
+                    el.name.includes(this.searchName[i])
+                });
+            })
         }
 
     },
