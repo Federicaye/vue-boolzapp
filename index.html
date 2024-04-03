@@ -51,7 +51,7 @@
                                 @click="changeContact(contact.id)">
                                 <div><img :src="contact.avatar" alt="" class="img-contact rounded-circle" ></div>
                                 <div>
-                                    <h6>{{contact.name}}</h6><span>ultimo messaggio</span>
+                                    <h6>{{contact.name}}</h6><span>{{lastMessage(contact.id)}}</span>
                                 </div>
                                 <div class="time ms-auto ">90</div>
                             </div>
