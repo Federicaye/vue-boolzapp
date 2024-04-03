@@ -19,6 +19,12 @@ createApp({
             console.log(user);
             const { messages} = user;
             return messages[messages.length-1].message;
+        },
+        lastMessageDate(id) {
+            let user = this.contacts.find((el) => el.id === id);
+            console.log(user);
+            const { date} = user;
+            return messages[messages.length-1].date;
         } 
 
     },
