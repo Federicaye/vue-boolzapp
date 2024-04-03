@@ -39,19 +39,18 @@ createApp({
             messages.push(enterMessage);
             console.log(enterMessage.message);
             console.log(enterMessage);
-            setTimeout(()=>{answerMsg(id, user);}, 3000);
+            setTimeout(() => { this.answerMsg(messages); }, 3000);
             return enterMessage;
         },
 
-        answerMsg(id, user){
-            let answerMsg = {
+        answerMsg(messages) {
+            let answerMessage = {
                 date: new Date(),
                 message: "ok",
                 status: 'received'
             };
-            const { messages } = user;
-            messages.push(answerMsg);
-
+            messages.push(answerMessage);
+            return answerMsg;
         }
 
     },
