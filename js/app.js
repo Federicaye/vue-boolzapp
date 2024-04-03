@@ -18,7 +18,7 @@ createApp({
             let user = this.contacts.find((el) => el.id === id);
             console.log(user);
             const { messages} = user;
-            return messages[0].message;
+            return messages[messages.length-1].message;
         } 
 
     },
