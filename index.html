@@ -23,8 +23,8 @@
                 <!-- contact list -->
 
                 <div class="col-4 h-100 d-flex flex-column">
-                    <div class="little-header w-100">header</div>
-                    <div class="little-main bg-body-tertiary w-100 ">
+                    <div class="little-header">header</div>
+                    <div class="little-main bg-body-tertiary">
 
                         <!-- notification message -->
                         <div class="d-flex align-items-center notification-settings p-3">
@@ -37,18 +37,18 @@
                         </div>
                         <div class="p-2 find-chat"> <input type="text" class=" w-100 " placeholder="Cerca o inizia una nuova chat"></div>
                         <!-- contacts -->
-                        <div class="h-100 ">
-                            <ul class="contacts">
-                                <li class="contact d-flex align-content-start p-3" v-for="(contact, index) in contacts"
+                       
+                            <div class="contacts">
+                                <div class="contact d-flex align-content-start p-3" v-for="(contact, index) in contacts"
                                     :class="{}">
                                     <div><img src="img/avatar_2.jpg" alt="" class="img-contact rounded-circle"></div>
                                     <div>
                                         <h6>Michele</h6><span>ultimo messaggio</span>
                                     </div>
                                     <div class="time ms-auto ">90</div>
-                                </li>
-                            </ul>
-                        </div>
+                                </div>
+                            </div>
+                        
                     </div>
                 </div>
                 <!-- chat -->
