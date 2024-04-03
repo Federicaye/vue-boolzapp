@@ -20,6 +20,7 @@
 
 }
 
+
 /* LITTLE HEADER */
 
 .little-header {
@@ -85,13 +86,17 @@
 
 }
 
+.active {
+    background-color: var(--grey);
+}
+
 /* LITTLE MAIN chat */
 
 .col-8 input {
     height: 40px;
 }
 
-.col-8 .p-2 {
+.col-8 .little-main .p-2 {
     font-size: 20px;
     color: rgb(94, 94, 94);
 }
@@ -103,4 +108,20 @@
 .chat {
     background-image: url(img/mine.jpg);
     overflow-y: auto;
+}
+
+.msg {
+ width: 300px;
+ border-radius: 10px;
+ padding: 10px;
+}
+
+.sent {
+background-color: var(--green);
+margin-left: auto;
+}
+
+.received {
+background-color: white;
+margin-right: auto;
 }

@@ -13,6 +13,9 @@ createApp({
       
     },
     computed: {
+        activeContactChat() {
+            return this.contacts.find((el) => el.id === this.activeContact)
+        }
      },
     mounted() {
        

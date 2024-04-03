@@ -21,7 +21,7 @@
 
             <div class="row g-0 wrapper w-100">
                 <!-- contact list -->
-
+                <!-- little header -->
                 <div class="col-4 h-100 d-flex flex-column">
                     <div class="little-header d-flex align-items-center justify-content-between">
                         <div><img src="img/avatar_2.jpg" alt="" class="img-user rounded-circle ps-2 "><span>Sofia</span>
@@ -29,6 +29,7 @@
                         <div><i class="fa-solid fa-circle-notch p-2"></i><i class="fa-solid fa-message p-2"></i><i
                                 class="fa-solid fa-ellipsis-vertical ps-2 pe-3  "></i></div>
                     </div>
+                    <!-- little main CONTACTS-->
                     <div class="little-main bg-body-tertiary">
 
                         <!-- notification message -->
@@ -45,11 +46,12 @@
                         <!-- contacts -->
 
                         <div class="contacts">
-                            <div class="contact d-flex align-content-start p-3" v-for="(contact, index) in contacts"
+                            <div class="contact d-flex align-content-start p-3"
+                                :class="{'active': activeContact === contact.id }" v-for="(contact, index) in contacts"
                                 :class="{}">
-                                <div><img src="img/avatar_2.jpg" alt="" class="img-contact rounded-circle"></div>
+                                <div><img :src="contact.avatar" alt="" class="img-contact rounded-circle"></div>
                                 <div>
-                                    <h6>Michele</h6><span>ultimo messaggio</span>
+                                    <h6>{{contact.name}}</h6><span>ultimo messaggio</span>
                                 </div>
                                 <div class="time ms-auto ">90</div>
                             </div>
@@ -58,8 +60,8 @@
                     </div>
                 </div>
                 <!-- chat -->
-
-                <div class="col-8 bg-body-secondary d-flex flex-column ">
+                <!-- little header -->
+                <div class="col-8 bg-body-secondary d-flex flex-column h-100">
                     <div class="little-header w-100 d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center">
                             <img src="img/avatar_5.jpg" alt="" class="img-user rounded-circle ps-2 d-block">
@@ -69,14 +71,19 @@
                             </div>
                         </div>
                         <div>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <i class="fa-solid fa-paperclip"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <i class="fa-solid fa-magnifying-glass p-2"></i>
+                            <i class="fa-solid fa-paperclip p-2"></i>
+                            <i class="fa-solid fa-ellipsis-vertical p-2"></i>
                         </div>
 
                     </div>
-                    <div class="little-main bg-body-tertiary w-100 d-flex flex-column justify-content-between">
-                        <div class="chat w-100 h-100"></div>
+                    <!-- little main CHAT-->
+                    <div class="little-main w-100 d-flex flex-column justify-content-between">
+                        <div class="chat w-100 h-100" >
+                            <div v-for="(msg, index) in activeContactChat.messages"  class="msg m-2">
+                                <div :class="msg.status">{{msg.message}}</div>
+                            </div>
+                        </div>
                         <div class="text-input p-2 d-flex justify-content-between align-items-center">
                             <i class="fa-regular fa-face-smile ps-4 text-center"></i>
                             <input type="text" class="w-75">
