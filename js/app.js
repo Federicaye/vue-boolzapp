@@ -10,6 +10,9 @@ createApp({
         }
     },
     methods: {
+        changeContact(id){
+           return this.activeContact = id;
+        }
       
     },
     computed: {
