@@ -1,0 +1,32 @@
+#app {
+    height: 100vh;
+    width: 100%;
+    background-color: pink;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: linear-gradient(180deg, #009688 18%, #EAEAEA 18.01%);
+
+}
+
+.little-header {
+    height: 40px;
+}
+
+.little-main {
+    height: calc(100% - 20px);
+    overflow-y: auto;
+}
+
+.wrapper {
+    height: calc(100vh - 60px);
+    background-color: aqua;
+
+}
+
+.chat {
+    overflow-y: auto;
+}
+
+.img-contact {
+    width: 40px;
+}
