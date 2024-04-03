@@ -19,10 +19,10 @@
     <div id="app">
         <div class="container">
 
-            <div class="row g-0 wrapper">
+            <div class="row g-0 wrapper w-100">
                 <!-- contact list -->
 
-                <div class="col-4 bg-body-tertiary d-flex flex-column">
+                <div class="col-4 h-100 d-flex flex-column">
                     <div class="little-header w-100">header</div>
                     <div class="little-main bg-body-tertiary w-100 ">
 
@@ -35,9 +35,10 @@
                                 <p>attiva notifivhe di desktop</p>
                             </div>
                         </div>
+                        <div class="p-2 find-chat"> <input type="text" class=" w-100 " placeholder="Cerca o inizia una nuova chat"></div>
                         <!-- contacts -->
-                        <div class="contacts">
-                            <ul>
+                        <div class="h-100 ">
+                            <ul class="contacts">
                                 <li class="contact d-flex align-content-start p-3" v-for="(contact, index) in contacts"
                                     :class="{}">
                                     <div><img src="img/avatar_2.jpg" alt="" class="img-contact rounded-circle"></div>
