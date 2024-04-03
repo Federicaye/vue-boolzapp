@@ -21,23 +21,39 @@
 
             <div class="row g-0 wrapper">
                 <!-- contact list -->
+
                 <div class="col-4 bg-body-tertiary d-flex flex-column">
-                    <div class="little-header bg-body w-100">header</div>
-                    <div class="little-main bg-body-tertiary w-100 ">contatti
-                        <ul>
-                            <li class="contact d-flex align-content-start " v-for="(contact, index) in contacts" :class="{}">
-                                <div><img src="img/avatar_2.jpg" alt="" class="img-contact rounded-circle "></div>
-                                <div>
-                                    <h6>Michele</h6><span>ultimo messaggio</span>
-                                </div>
-                                <div class="time ms-auto ">90</div>
-                            </li>
-                        </ul>
+                    <div class="little-header w-100">header</div>
+                    <div class="little-main bg-body-tertiary w-100 ">
+
+                        <!-- notification message -->
+                        <div class="d-flex align-items-center notification-settings p-3">
+                            <div class="circle-icon d-flex justify-content-center align-items-center "><i
+                                    class="fa-solid fa-bell-slash"></i></div>
+                            <div class="d-flex flex-column justify-items-center  ">
+                                <p>Ricevi notifiche di nuovi messaggio</p>
+                                <p>attiva notifivhe di desktop</p>
+                            </div>
+                        </div>
+                        <!-- contacts -->
+                        <div class="contacts">
+                            <ul>
+                                <li class="contact d-flex align-content-start p-3" v-for="(contact, index) in contacts"
+                                    :class="{}">
+                                    <div><img src="img/avatar_2.jpg" alt="" class="img-contact rounded-circle"></div>
+                                    <div>
+                                        <h6>Michele</h6><span>ultimo messaggio</span>
+                                    </div>
+                                    <div class="time ms-auto ">90</div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <!-- chat -->
+
                 <div class="col-8 bg-body-secondary d-flex flex-column ">
-                    <div class="little-header bg-body w-100 ">header</div>
+                    <div class="little-header w-100 ">header</div>
                     <div class="little-main bg-body-tertiary w-100  chat ">caio</div>
                 </div>
             </div>

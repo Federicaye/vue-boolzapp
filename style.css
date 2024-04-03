@@ -1,3 +1,10 @@
+:root {
+    --grey: rgba(217, 217, 217, 1);
+    --blue: rgba(142, 218, 252, 1);
+    --green: rgba(213, 249, 186, 1);
+    --grey-light: rgba(217, 217, 217, 1);
+}
+
 #app {
     height: 100vh;
     width: 100%;
@@ -5,16 +12,11 @@
     padding-top: 30px;
     padding-bottom: 30px;
     background: linear-gradient(180deg, #009688 18%, #EAEAEA 18.01%);
-
+    
 }
 
-.little-header {
-    height: 40px;
-}
-
-.little-main {
-    height: calc(100% - 20px);
-    overflow-y: auto;
+ul {
+    padding-inline-start: 0px;
 }
 
 .wrapper {
@@ -23,10 +25,49 @@
 
 }
 
+/* LITTLE HEADER */
+
+.little-header {
+    height: 50px;
+    background-color: var(--grey);
+}
+
+/* LITTLE MAIN contacts list */
+
+.little-main {
+    height: calc(100% - 20px);
+}
+
+.circle-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    color: var(--blue);
+}
+
+.notification-settings {
+    background-color: var(--blue);
+    height: 70px;
+}
+
+.notification-settings p {
+    line-height: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.img-contact {
+    width: 50px;
+}
+
 .chat {
     overflow-y: auto;
 }
 
-.img-contact {
-    width: 40px;
+.contacts {
+    overflow: hidden;
+    width: 100%;
+    height: calc(100% - 70px)
 }
