@@ -125,4 +125,11 @@ margin-left: auto;
 .received {
 background-color: white;
 margin-right: auto;
+
+}
+
+.delete-message {
+    width: 100px;
+    height: 50px;
+    font-size: 14px;
 }

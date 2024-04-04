@@ -43,14 +43,16 @@
                             </div>
                         </div>
                         <div class="p-2 find-chat"> <input type="text" class=" w-100 "
-                                placeholder="Cerca o inizia una nuova chat" v-model="searchName" ></div>
+                                placeholder="Cerca o inizia una nuova chat" v-model="searchName"></div>
                         <!-- contacts -->
 
                         <div class="contacts">
+                            <p v-show="filteredContacts.length === 0" class="p-2 alert alert-danger ">non ci sono
+                                elementi corrispondenti alla tua ricerca</p>
                             <div class="contact d-flex align-content-start p-3"
-                                :class="{'active': activeContact === contact.id }" v-for="(contact, index) in filteredContacts"
-                                @click="changeContact(contact.id)">
-                                <div><img :src="contact.avatar" alt="" class="img-contact rounded-circle" ></div>
+                                :class="{'active': activeContact === contact.id }"
+                                v-for="(contact, index) in filteredContacts" @click="changeContact(contact.id)">
+                                <div><img :src="contact.avatar" alt="" class="img-contact rounded-circle"></div>
                                 <div>
                                     <h6>{{contact.name}}</h6><span>{{lastMessage(contact.id)}}</span>
                                 </div>
@@ -80,9 +82,14 @@
                     </div>
                     <!-- little main CHAT-->
                     <div class="little-main w-100 d-flex flex-column justify-content-between">
-                        <div class="chat w-100 h-100" >
-                            <div v-for="(msg, index) in activeContactChat.messages" :class="msg.status" class="msg">
-                                <div >{{msg.message}}</div>
+                        <div class="chat w-100 h-100">
+                            <div v-for="(msg, index) in activeContactChat.messages">
+
+                                <div :class="msg.status" class="msg">{{msg.message}}
+                                    
+                                </div> 
+                                <p :class="msg.status" class="delete-message ">message info <br> delete message
+                                </p>
                             </div>
                         </div>
                         <div class="text-input p-2 d-flex justify-content-between align-items-center">
