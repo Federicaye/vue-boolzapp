@@ -57,9 +57,11 @@ createApp({
             return answerMsg;
         },
 
-        deleteMsg(index) {
-            this.activeContactChat.messages.splice(index, 1);
-            return this.activeContact;
+        deleteMsg(msg) {
+            const indexToDelete = this.activeContactChat.messages.indexOf(msg);
+            if (indexToDelete !== -1) {
+                this.activeContactChat.messages.splice(indexToDelete, 1);
+            }
 
         }
 
