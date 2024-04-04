@@ -1,3 +1,5 @@
+const dt = luxon.DateTime;
+
 import { contacts } from "./data.js"
 
 const { createApp } = Vue;
@@ -29,29 +31,27 @@ createApp({
             return messages[messages.length - 1].date;
         },
 
-        enterMessage(id) {
+        enterMessage() {
             let enterMessage = {
                 date: new Date(),
                 message: this.newMessage,
                 status: 'sent'
             };
-            let user = this.contacts.find((el) => el.id === this.activeContact);
-            const { messages } = user;
-            messages.push(enterMessage);
+            this.activeContactChat.messages.push(enterMessage);
             console.log(enterMessage.message);
             console.log(enterMessage);
-            setTimeout(() => { this.answerMsg(messages); }, 3000);
+            setTimeout(() => { this.answerMsg(); }, 2000);
             this.newMessage = "";
             return enterMessage;
         },
 
-        answerMsg(messages) {
+        answerMsg() {
             let answerMessage = {
                 date: new Date(),
                 message: "ok",
                 status: 'received'
             };
-            messages.push(answerMessage);
+            this.activeContactChat.messages.push(answerMessage);
             return answerMsg;
         },
 
