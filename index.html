@@ -48,7 +48,7 @@
 
                         <div class="contacts">
                             <div class="contact d-flex align-content-start p-3"
-                                :class="{'active': activeContact === contact.id }" v-for="(contact, index) in contacts"
+                                :class="{'active': activeContact === contact.id }" v-for="(contact, index) in filteredContacts"
                                 @click="changeContact(contact.id)">
                                 <div><img :src="contact.avatar" alt="" class="img-contact rounded-circle" ></div>
                                 <div>
