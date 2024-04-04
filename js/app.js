@@ -35,7 +35,8 @@ createApp({
             let enterMessage = {
                 date: new Date(),
                 message: this.newMessage,
-                status: 'sent'
+                status: 'sent',
+                delete: false,
             };
             this.activeContactChat.messages.push(enterMessage);
             console.log(enterMessage.message);
@@ -49,7 +50,8 @@ createApp({
             let answerMessage = {
                 date: new Date(),
                 message: "ok",
-                status: 'received'
+                status: 'received',
+                delete: false,
             };
             this.activeContactChat.messages.push(answerMessage);
             return answerMsg;

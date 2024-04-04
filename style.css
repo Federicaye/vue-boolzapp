@@ -11,7 +11,13 @@
     padding-top: 30px;
     padding-bottom: 30px;
     background: linear-gradient(180deg, #009688 18%, #EAEAEA 18.01%);
+    
 
+}
+
+#app ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
 }
 
 .wrapper {
