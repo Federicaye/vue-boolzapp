@@ -55,6 +55,12 @@ createApp({
             };
             this.activeContactChat.messages.push(answerMessage);
             return answerMsg;
+        },
+
+        deleteMsg(index){
+            this.activeContactChat.messages.splice(index, 1);
+            return this.activeContact;
+
         }
 
     },
