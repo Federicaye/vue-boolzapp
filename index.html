@@ -64,9 +64,9 @@
                 <div class="col-8 bg-body-secondary d-flex flex-column h-100">
                     <div class="little-header w-100 d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center">
-                            <img src="img/avatar_5.jpg" alt="" class="img-user rounded-circle ps-2 d-block">
+                            <img :src="activeContactChat.avatar" alt="" class="img-user rounded-circle ps-2 d-block">
                             <div>
-                                <p>Michele</p>
+                                <p>{{activeContactChat.name}}</p>
                                 <p>ultimo accesso alle ore </p>
                             </div>
                         </div>
