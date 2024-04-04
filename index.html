@@ -85,8 +85,8 @@
                         <div class="chat w-100 h-100">
                             <div v-for="(msg, index) in activeContactChat.messages">
 
-                                <div :class="msg.status" class="msg position-relative">{{msg.message}}
-                                    <p class="delete-message position-absolute" :class="msg.status">message info <br> delete message
+                                <div :class="msg.status" class="msg position-relative" @click="msg.delete = !msg.delete">{{msg.message}}
+                                    <p class="delete-message position-absolute" :class="msg.status" v-if="msg.delete">message info <br> delete message
                                     </p> 
                                 </div> 
                                 

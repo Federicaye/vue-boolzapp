@@ -11,7 +11,7 @@ createApp({
             contacts,
             dateLastMsg: null,
             newMessage: "",
-            searchName: ""
+            searchName: "",
         }
     },
     methods: {
