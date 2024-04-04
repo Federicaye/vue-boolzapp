@@ -57,7 +57,7 @@ createApp({
             return answerMsg;
         },
 
-        deleteMsg(index){
+        deleteMsg(index) {
             this.activeContactChat.messages.splice(index, 1);
             return this.activeContact;
 
@@ -70,12 +70,27 @@ createApp({
         },
         filteredContacts() {
             return this.contacts.filter((el) => {
-               return el.name.toLowerCase().includes(this.searchName.toLowerCase())
+                return el.name.toLowerCase().includes(this.searchName.toLowerCase())
             })
+        },
+       /*  msgId() {
+            const msgIdArray = this.activeContactChat().messages.map((msg) => {
+                    ...msg,
+          });
+        } */
+        msgId(){
+            let idM = 1;
+            const arrayMsgWhitId = this.activeContactChat.messages.map((msg) => {
+            const msgWhitId = {...msg, id: idM};
+            idM ++; 
+            return msgWhitId;
+
+        });
+        return arrayMsgWhitId;
         }
 
     },
-    mounted() {
-
-    }
+mounted() {
+console.log(this.msgId);
+}
 }).mount('#app')
