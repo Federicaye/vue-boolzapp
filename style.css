@@ -120,12 +120,17 @@
 .sent {
 background-color: var(--green);
 margin-left: auto;
+top: 40px;
+right: 10px;
+z-index: 20400;
 }
 
 .received {
 background-color: white;
 margin-right: auto;
-
+top: 40px;
+left: 10px;
+z-index: 2000;
 }
 
 .delete-message {
