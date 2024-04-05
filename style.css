@@ -132,7 +132,7 @@ margin-left: auto;
 .delete-message.sent {
     bottom: -50px;
    right: 10px;
-    z-index: 20400;
+    z-index: 2400;
 }
 
 .received {
@@ -151,5 +151,5 @@ margin-right: auto;
     height: 45px;
     font-size: 14px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 1px 3px #666
+    box-shadow: 0 1px 3px #666;
 }
