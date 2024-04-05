@@ -22,13 +22,19 @@ createApp({
             let user = this.contacts.find((el) => el.id === id);
             console.log(user);
             const { messages } = user;
-            return messages[messages.length - 1].message;
+            if (messages.length > 0) {
+                return messages[messages.length - 1].message;
+            } else { return "" }
+
         },
         lastMessageDate(id) {
             let user = this.contacts.find((el) => el.id === id);
             console.log(user);
             const { messages } = user;
-            return messages[messages.length - 1].date;
+            if (messages.length > 0) {
+                return messages[messages.length - 1].data;
+            } else { return "" };
+
         },
 
         enterMessage() {
@@ -43,6 +49,7 @@ createApp({
             console.log(enterMessage);
             setTimeout(() => { this.answerMsg(); }, 2000);
             this.newMessage = "";
+            this.$refs.messages[this.$refs.messages.length - 1].scrollIntoView();
             return enterMessage;
         },
 
@@ -60,9 +67,12 @@ createApp({
         deleteMsg(msg) {
             const indexToDelete = this.activeContactChat.messages.indexOf(msg);
             if (indexToDelete !== -1) {
+                this.activeContactChat.messages[indexToDelete].delete= false;
                 this.activeContactChat.messages.splice(indexToDelete, 1);
+                return indexToDelete;
             }
-
+            
+            return indexToDelete;
         }
 
     },
@@ -75,24 +85,24 @@ createApp({
                 return el.name.toLowerCase().includes(this.searchName.toLowerCase())
             })
         },
-       /*  msgId() {
-            const msgIdArray = this.activeContactChat().messages.map((msg) => {
-                    ...msg,
-          });
-        } */
-        msgId(){
+        /*  msgId() {
+             const msgIdArray = this.activeContactChat().messages.map((msg) => {
+                     ...msg,
+           });
+         } */
+        msgId() {
             let idM = 1;
             const arrayMsgWhitId = this.activeContactChat.messages.map((msg) => {
-            const msgWhitId = {...msg, id: idM};
-            idM ++; 
-            return msgWhitId;
+                const msgWhitId = { ...msg, id: idM };
+                idM++;
+                return msgWhitId;
 
-        });
-        return arrayMsgWhitId;
+            });
+            return arrayMsgWhitId;
         }
 
     },
-mounted() {
-console.log(this.msgId);
-}
+    mounted() {
+        console.log(this.msgId);
+    }
 }).mount('#app')
