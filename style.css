@@ -11,7 +11,7 @@
     padding-top: 30px;
     padding-bottom: 30px;
     background: linear-gradient(180deg, #009688 18%, #EAEAEA 18.01%);
-    
+
 
 }
 
@@ -47,6 +47,17 @@
 
 .little-header i {
     color: rgb(94, 94, 94);
+}
+
+.eliminate-chat {
+    top: 30px;
+    right: 0px;
+    z-index: 2000;
+    background-color: blanchedalmond;
+    width: 200px;
+    height: 80px;
+    line-height: 40px;
+    box-shadow: 0 1px 3px #666;
 }
 
 /* LITTLE HEADER */
@@ -117,26 +128,26 @@
 }
 
 .msg {
- width: 300px;
- border-radius: 10px;
- padding: 10px;
- margin: 7px;
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 7px;
 }
 
 .sent {
-background-color: var(--green);
-margin-left: auto;
+    background-color: var(--green);
+    margin-left: auto;
 }
 
 .delete-message.sent {
     bottom: -50px;
-   right: 10px;
+    right: 10px;
     z-index: 2400;
 }
 
 .received {
-background-color: white;
-margin-right: auto;
+    background-color: white;
+    margin-right: auto;
 }
 
 .delete-message.received {

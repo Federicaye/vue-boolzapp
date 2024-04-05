@@ -71,15 +71,16 @@
                             <img :src="activeContactChat.avatar" alt="" class="img-user rounded-circle ps-2 d-block">
                             <div>
                                 <p>{{activeContactChat.name}}</p>
-                                <p>ultimo accesso alle ore </p>
+                                <p>ultimo accesso alle ore {{lastMessageDate(activeContact)}}</p>
                                 
                             </div>
                             <span v-if="newMessage" class="ms-5 text-success">sta scrivendo....</span>
                         </div>
-                        <div>
+                        <div class="position-relative" @click="dropdownEliminateChat=!dropdownEliminateChat">
                             <i class="fa-solid fa-magnifying-glass p-2"></i>
                             <i class="fa-solid fa-paperclip p-2"></i>
                             <i class="fa-solid fa-ellipsis-vertical p-2"></i>
+                            <ul v-if="dropdownEliminateChat" class="position-absolute eliminate-chat"><li @click="eliminateChat()">elimina chat</li><li @click="eliminateMessages">elimina messaggi</li></ul>
                         </div>
 
                     </div>
