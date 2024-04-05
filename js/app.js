@@ -49,7 +49,8 @@ createApp({
             console.log(enterMessage);
             setTimeout(() => { this.answerMsg(); }, 2000);
             this.newMessage = "";
-            this.$refs.messages[this.$refs.messages.length - 1].scrollIntoView();
+            this.$nextTick(() => {this.$refs.messages[this.$refs.messages.length - 1].scrollIntoView();});
+            
             return enterMessage;
         },
 
@@ -61,6 +62,7 @@ createApp({
                 delete: false,
             };
             this.activeContactChat.messages.push(answerMessage);
+            this.$nextTick(() => {this.$refs.messages[this.$refs.messages.length - 1].scrollIntoView();});
             return answerMsg;
         },
 
