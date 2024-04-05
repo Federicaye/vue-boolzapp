@@ -98,7 +98,8 @@
                         <div class="text-input p-2 d-flex justify-content-between align-items-center">
                             <i class="fa-regular fa-face-smile ps-4 text-center"></i>
                             <input type="text" class="w-75" v-model="newMessage" @keyup.enter="enterMessage()">
-                            <i class="fa-solid fa-microphone pe-4 text-center"></i>
+                            <i v-if="!newMessage" class="fa-solid fa-microphone pe-4 text-center"></i>
+                            <i v-if="newMessage"  @click="enterMessage()" class="fa-solid fa-paper-plane pe-4 text-center "></i>
                         </div>
                     </div>
                 </div>

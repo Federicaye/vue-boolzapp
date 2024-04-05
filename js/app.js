@@ -39,7 +39,7 @@ createApp({
 
         enterMessage() {
             let enterMessage = {
-                date: dt.now().setLocale('it').toFormat('dd/MM/yyyy HH:mm:ss'),
+                date: dt.now().setLocale('it').toFormat('dd/MM/yyyy HH:mm'),
                 message: this.newMessage,
                 status: 'sent',
                 delete: false,
@@ -56,7 +56,7 @@ createApp({
 
         answerMsg() {
             let answerMessage = {
-                date: dt.now().setLocale('it').toFormat('dd/MM/yyyy HH:mm:ss'),
+                date: dt.now().setLocale('it').toFormat('dd/MM/yyyy HH:mm'),
                 message: "ok",
                 status: 'received',
                 delete: false,
