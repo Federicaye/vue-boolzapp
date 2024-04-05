@@ -32,14 +32,14 @@ createApp({
             console.log(user);
             const { messages } = user;
             if (messages.length > 0) {
-                return messages[messages.length - 1].data;
+                return messages[messages.length - 1].date;
             } else { return "" };
 
         },
 
         enterMessage() {
             let enterMessage = {
-                date: new Date(),
+                date: dt.now().setLocale('it').toFormat('dd/MM/yyyy HH:mm:ss'),
                 message: this.newMessage,
                 status: 'sent',
                 delete: false,
@@ -56,7 +56,7 @@ createApp({
 
         answerMsg() {
             let answerMessage = {
-                date: new Date(),
+                date: dt.now().setLocale('it').toFormat('dd/MM/yyyy HH:mm:ss'),
                 message: "ok",
                 status: 'received',
                 delete: false,
@@ -87,11 +87,7 @@ createApp({
                 return el.name.toLowerCase().includes(this.searchName.toLowerCase())
             })
         },
-        /*  msgId() {
-             const msgIdArray = this.activeContactChat().messages.map((msg) => {
-                     ...msg,
-           });
-         } */
+       
         msgId() {
             let idM = 1;
             const arrayMsgWhitId = this.activeContactChat.messages.map((msg) => {
