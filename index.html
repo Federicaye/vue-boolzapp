@@ -72,7 +72,9 @@
                             <div>
                                 <p>{{activeContactChat.name}}</p>
                                 <p>ultimo accesso alle ore </p>
+                                
                             </div>
+                            <span v-if="newMessage" class="ms-5 text-success">sta scrivendo....</span>
                         </div>
                         <div>
                             <i class="fa-solid fa-magnifying-glass p-2"></i>
