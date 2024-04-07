@@ -92,7 +92,7 @@
                                 <div :class="msg.status" class="msg position-relative" @click="msg.delete = !msg.delete" ref="messages">{{msg.message}}
                                     <ul class="delete-message position-absolute" :class="msg.status" v-show="msg.delete">
                                         <li>info message</li>
-                                        <li @click="deleteMsg(msg)">delete message</li> 
+                                        <li @click.stop="deleteMsg(msg)">delete message</li> 
                                     </ul> 
                                 </div> 
                                 
