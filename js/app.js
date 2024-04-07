@@ -72,18 +72,17 @@ createApp({
             if (indexToDelete !== -1) {
                 this.activeContactChat.messages.splice(indexToDelete, 1);
                 console.log(activeContactChat.messages);
-                /*  this.activeContact.messages[indexToDelete].delete = false; */
+                
             }
             this.activeContact.messages[indexToDelete].delete = false;
         },
 
         eliminateMessages() {
             this.activeContactChat.messages.splice(0, this.activeContactChat.messages.length);
-    
+            /*posso scrivere anche:  this.activeContactChat.messages.length = 0; */
         },
 
         eliminateChat() {
-           /*  this.activeContactChat.messages.length = 0; */
             const contactToDelete = this.filteredContacts.indexOf(this.activeContactChat);
             this.filteredContacts.splice(contactToDelete, 1);
         }
