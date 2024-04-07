@@ -21,7 +21,7 @@ createApp({
         },
         lastMessage(id) {
             let user = this.contacts.find((el) => el.id === id);
-           /*  console.log(user); */
+            /*  console.log(user); */
             const { messages } = user;
             if (messages.length > 0) {
                 return messages[messages.length - 1].message;
@@ -30,7 +30,7 @@ createApp({
         },
         lastMessageDate(id) {
             let user = this.contacts.find((el) => el.id === id);
-           /*  console.log(user); */
+            /*  console.log(user); */
             const { messages } = user;
             if (messages.length > 0) {
                 return messages[messages.length - 1].date;
@@ -46,12 +46,12 @@ createApp({
                 delete: false,
             };
             this.activeContactChat.messages.push(enterMessage);
-          /*   console.log(enterMessage.message);
-            console.log(enterMessage); */
+            /*   console.log(enterMessage.message);
+              console.log(enterMessage); */
             setTimeout(() => { this.answerMsg(); }, 2000);
             this.newMessage = "";
-            this.$nextTick(() => {this.$refs.messages[this.$refs.messages.length - 1].scrollIntoView();});
-            
+            this.$nextTick(() => { this.$refs.messages[this.$refs.messages.length - 1].scrollIntoView(); });
+
             return enterMessage;
         },
 
@@ -63,7 +63,7 @@ createApp({
                 delete: false,
             };
             this.activeContactChat.messages.push(answerMessage);
-            this.$nextTick(() => {this.$refs.messages[this.$refs.messages.length - 1].scrollIntoView();});
+            this.$nextTick(() => { this.$refs.messages[this.$refs.messages.length - 1].scrollIntoView(); });
             return answerMsg;
         },
 
@@ -72,18 +72,20 @@ createApp({
             if (indexToDelete !== -1) {
                 this.activeContactChat.messages.splice(indexToDelete, 1);
                 console.log(activeContactChat.messages);
-               /*  this.activeContact.messages[indexToDelete].delete = false; */
+                /*  this.activeContact.messages[indexToDelete].delete = false; */
             }
             this.activeContact.messages[indexToDelete].delete = false;
         },
 
-        eliminateMessages(){
+        eliminateMessages() {
             this.activeContactChat.messages.splice(0, this.activeContactChat.messages.length);
-            return "bo"
+    
         },
 
-        eliminateChat(){
-
+        eliminateChat() {
+           /*  this.activeContactChat.messages.length = 0; */
+            const contactToDelete = this.filteredContacts.indexOf(this.activeContactChat);
+            this.filteredContacts.splice(contactToDelete, 1);
         }
 
     },
@@ -96,7 +98,7 @@ createApp({
                 return el.name.toLowerCase().includes(this.searchName.toLowerCase())
             })
         },
-       
+
         msgId() {
             let idM = 1;
             const arrayMsgWhitId = this.activeContactChat.messages.map((msg) => {
@@ -110,6 +112,6 @@ createApp({
 
     },
     mounted() {
-       
+
     }
 }).mount('#app')

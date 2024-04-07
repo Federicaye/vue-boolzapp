@@ -80,7 +80,10 @@
                             <i class="fa-solid fa-magnifying-glass p-2"></i>
                             <i class="fa-solid fa-paperclip p-2"></i>
                             <i class="fa-solid fa-ellipsis-vertical p-2"></i>
-                            <ul v-if="dropdownEliminateChat" class="position-absolute eliminate-chat"><li @click="eliminateChat()">elimina chat</li><li @click="eliminateMessages">elimina messaggi</li></ul>
+                            <ul v-if="dropdownEliminateChat" class="position-absolute eliminate-chat">
+                                <li @click="eliminateChat">elimina chat</li>
+                                <li @click="eliminateMessages">elimina messaggi</li>
+                            </ul>
                         </div>
 
                     </div>
